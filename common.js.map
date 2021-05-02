@@ -1,0 +1,1 @@
+{"version":3,"sources":["./src/app/modules/shared/constants/app-constant.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;AAAA;AAAO,MAAM,WAAW;;AACN,iBAAK,GAAG,OAAO","file":"common.js","sourcesContent":["export class AppConstant {\n    public static TOKEN = 'TOKEN'\n}"],"sourceRoot":"webpack:///"}
