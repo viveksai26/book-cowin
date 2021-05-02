@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center align-items-end">
+            <mat-card class="col-md-6" style="margin-top: 5%;">
+                <div class="d-flex justify-content-center">
+                    <h1>COWIN LOGIN</h1>
+                  </div>
+                <div class="row mb-2">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <mat-horizontal-stepper  #stepper="matHorizontalStepper">
+                            <mat-step [stepControl]="loginFormGroup">
+                              <form [formGroup]="loginFormGroup">
+                                <ng-template matStepLabel>Enter your mobile number</ng-template>
+                                <mat-form-field>
+                                  <input matInput  type="number" placeholder="Mobile number" formControlName="mobileNumber" required>
+                                </mat-form-field>
+                                <div>
+                                  <button mat-raised-button color="primary" [disabled]="loginFormGroup.invalid" (click)="generateOTP()" matStepperNext>Generate OTP</button>
+                                </div>
+                              </form>
+                            </mat-step>
+                            <mat-step [stepControl]="otpFormGroup">
+                                <form [formGroup]="otpFormGroup">
+                                  <ng-template matStepLabel>Enter OTP</ng-template>
+                                  <mat-form-field>
+                                    <input matInput  type="text" placeholder="OTP" formControlName="otp" required>
+                                  </mat-form-field>
+                                  <div>
+                                    <button mat-raised-button color="primary" [disabled]="otpFormGroup.invalid" (click)="generateToken()" matStepperNext>Login</button>
+                                  </div>
+                                </form>
+                              </mat-step>
+                          </mat-horizontal-stepper>
+                    </div>
+                </div>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
